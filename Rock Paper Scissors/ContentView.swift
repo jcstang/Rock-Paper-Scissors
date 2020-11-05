@@ -10,11 +10,15 @@ import SwiftUI
 struct ContentView: View {
     @State var appMsg: String = "Lorem ipsum"
     @State var someCount: Int = 0
-//    var myFunClass = ActionFunctions()
+    @State var rockPaperScissorsImgTxt: String = "rock"
     
     var body: some View {
         // Main Group
         VStack {
+            Image(rockPaperScissorsImgTxt)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 200)
             Text("\(appMsg) \(someCount)").padding()
             
 //            Button(action: onClickActions) {
@@ -38,6 +42,23 @@ struct ContentView: View {
     func onClickActions() -> Void {
         appMsg = "Hello, There!"
         someCount = someCount + 1
+        rockPaperScissorsImgTxt = "paper"
+    }
+    
+    func getImageText() -> String {
+        return "rock"
+    }
+    
+    func getRockText() -> String {
+        return "rock"
+    }
+    
+    func getPaperText() -> String {
+        return "paper"
+    }
+    
+    func getScissorsText() -> String {
+        return "scissors"
     }
 }
 

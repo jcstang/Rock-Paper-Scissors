@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "e529a985fbd2671b43973dc509d21c93-rubble-rock-by-vexels.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
