@@ -32,11 +32,6 @@ struct ContentView: View {
                 }.padding()
             }
             
-            Menu("Choose") {
-                Button("Rock", action: onClickActions)
-                Button("Paper", action: onClickActions)
-                Button("Scissors", action: onClickActions)
-            }
         }
     }
     
