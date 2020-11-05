@@ -18,17 +18,17 @@ struct ContentView: View {
             Image(rockPaperScissorsImgTxt)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 200)
+                .frame(width: 200, height: 200.0).padding()
             Text("\(appMsg) \(someCount)").padding()
             
 //            Button(action: onClickActions) {
 //                Text("Click me")
 //            }
             HStack {
-                Button(action: onClickActions){
+                Button(action: onPressRock){
                     Text("Rock")
                 }.padding()
-                Button(action: onClickActions){
+                Button(action: onPressPaper){
                     Text("Paper")
                 }.padding()
                 Button(action: onClickActions){
@@ -39,10 +39,20 @@ struct ContentView: View {
         }
     }
     
+    func onPressRock() -> Void {
+        onClickActions()
+        rockPaperScissorsImgTxt = "rock"
+    }
+    
+    func onPressPaper() -> Void {
+        onClickActions()
+        rockPaperScissorsImgTxt = "paper"
+    }
+    
     func onClickActions() -> Void {
         appMsg = "Hello, There!"
         someCount = someCount + 1
-        rockPaperScissorsImgTxt = "paper"
+//        rockPaperScissorsImgTxt = "paper"
     }
     
     func getImageText() -> String {
