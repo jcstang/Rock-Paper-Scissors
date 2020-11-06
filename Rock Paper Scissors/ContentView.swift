@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+let ROCK_TEXT: String = "rock"
+let PAPER_TEXT: String = "paper"
+let SCISSORS_TEXT: String = "fancyscissors"
+
 struct ContentView: View {
     @State var appMsg: String = "Lorem ipsum"
     @State var someCount: Int = 0
@@ -15,15 +19,26 @@ struct ContentView: View {
     var body: some View {
         // Main Group
         VStack {
+            HStack {
+//                Text("ME: \(10)").padding()
+//                Text("Computer: \(9)").padding()
+//                Text("Hello World")
+//                    .fontWeight(.bold)
+//                    .font(.callout)
+//                    .padding()
+//                    .background(Color.purple)
+//                    .cornerRadius(40)
+//                    .foregroundColor(.white)
+//                    .padding(10)
+            }
+            .padding()
+            
             Image(rockPaperScissorsImgTxt)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 200, height: 200.0).padding()
             Text("\(appMsg) \(someCount)").padding()
             
-//            Button(action: onClickActions) {
-//                Text("Click me")
-//            }
             HStack {
                 Button(action: onPressRock){
                     Text("Rock")
@@ -31,7 +46,7 @@ struct ContentView: View {
                 Button(action: onPressPaper){
                     Text("Paper")
                 }.padding()
-                Button(action: onClickActions){
+                Button(action: onPressScissors){
                     Text("Scissors")
                 }.padding()
             }
@@ -41,35 +56,27 @@ struct ContentView: View {
     
     func onPressRock() -> Void {
         onClickActions()
-        rockPaperScissorsImgTxt = "rock"
+        appMsg = "Rock"
+        rockPaperScissorsImgTxt = ROCK_TEXT
     }
     
     func onPressPaper() -> Void {
         onClickActions()
-        rockPaperScissorsImgTxt = "paper"
+        appMsg = "Paper"
+        rockPaperScissorsImgTxt = PAPER_TEXT
+    }
+    
+    func onPressScissors() -> Void {
+        onClickActions()
+        appMsg = "Scissors"
+        rockPaperScissorsImgTxt = SCISSORS_TEXT
     }
     
     func onClickActions() -> Void {
-        appMsg = "Hello, There!"
+//        appMsg = "Hello, There!"
         someCount = someCount + 1
-//        rockPaperScissorsImgTxt = "paper"
     }
     
-    func getImageText() -> String {
-        return "rock"
-    }
-    
-    func getRockText() -> String {
-        return "rock"
-    }
-    
-    func getPaperText() -> String {
-        return "paper"
-    }
-    
-    func getScissorsText() -> String {
-        return "scissors"
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {
